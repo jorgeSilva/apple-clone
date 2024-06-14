@@ -1,0 +1,41 @@
+<header [ngClass]="container">
+  <nav [ngClass]="content">
+    <ul *ngFor="let item of optionsNavbar">
+      <li *ngIf="item.pathUrl; else linkOption" [ngClass]="nav">
+        <a [routerLink]="item.pathUrl">
+          {{item.content}}
+        </a>
+      </li>
+
+      <ng-template #linkOption>
+        <a href="" *ngIf="item.content === 'apple.svg'" [ngClass]="icon">
+          <app-apple-sm></app-apple-sm>
+        </a>
+        <a *ngIf="item.content === 'search.svg'" [ngClass]="icon">
+          <app-search-sm></app-search-sm>
+        </a>
+        <a *ngIf="item.content === 'store.svg'" [ngClass]="icon">
+          <app-store-sm></app-store-sm>
+        </a>
+      </ng-template>
+    </ul>
+  </nav>
+
+  <nav [ngClass]="contentActive">
+    <a href="" [ngClass]="iconActive">
+      <app-apple-lg></app-apple-lg>
+    </a>
+
+    <div [ngClass]="navbarButtonsActive">
+      <a [ngClass]="menuActive">
+        <app-search-lg></app-search-lg>
+      </a>
+      <a [ngClass]="menuActive">
+        <app-store-lg></app-store-lg>
+      </a>
+      <a [ngClass]="menuActive">
+        <app-menu></app-menu>
+      </a>
+    </div>
+  </nav>
+</header>

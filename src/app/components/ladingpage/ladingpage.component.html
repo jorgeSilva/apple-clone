@@ -1,0 +1,35 @@
+<section [ngClass]="container">
+  <ul *ngFor="let item of mainCards" [ngClass]="content">
+    <li [ngStyle]="{'background': 'url(' + item.img + ') center bottom no-repeat #000', 'width':'100%'}" [ngClass]="cardBackground">
+      <div *ngIf="item.title.startsWith('.'); else titleText" [ngClass]="cardItem">
+        <img [src]="item.title" [alt]="item.text" [ngClass]="cardTitleImg">
+        <p [ngClass]="cardText">{{item.text}}</p>
+        <a [ngClass]="cardButton">Saiba mais</a>
+      </div>
+
+      <ng-template #titleText>
+        <div [ngClass]="cardItemReverse">
+          <h1 [ngClass]="cardTitle">{{item.title}}</h1>
+          <p [ngClass]="cardText">{{item.text}}</p>
+          <div>
+            <a [ngClass]="cardButton">Saiba mais</a>
+            <a [ngClass]="cardButtonPay">Comprar</a>
+          </div>
+        </div>
+      </ng-template>
+
+    </li>
+  </ul>
+
+  <div *ngFor="let item of secondaryCards" [ngClass]="contentGrid">
+    <div *ngIf="item.title.startsWith('.')" [ngClass]="cardItemGrid">
+      <img [src]="item.title" [alt]="item.text">
+    </div>
+
+    <!-- <ng-template #titleTextGrid>
+      <div [ngClass]="cardItemGrid">
+        <h2>{{item.title}}</h2>
+      </div>
+    </ng-template> -->
+  </div>
+</section>

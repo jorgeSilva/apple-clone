@@ -1,0 +1,55 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: var(--color-font-navbar);
+}
+
+html {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  --font-title-card-primary-lg: 3.5rem;
+  --font-text-card-primary-lg: 1.75rem;
+  --font-title-card-secondary-lg: 2.5rem;
+  --font-text-card-secondary-lg: 1.32rem;
+
+  --font-title-card-sm: 2rem;
+  --font-text-card-sm: 1.2rem;
+
+  --font-navbar: .75rem;
+  --padding-navbar: .89rem;
+  --color-font-navbar: rgba(255, 255, 255, .8);
+  --color-background-navbar: rgba(22, 22, 23, .8);
+
+  --font-button-card-lg: 1.065rem;
+  --font-button-card-sm: .88rem;
+
+  --font-weight-navbar-card-title: 600;
+  --font-weight-navbar-card-text: 400;
+  --font-weight-navbar: 400;
+
+  --color-font-card-ligth: #f5f5f7;
+  --color-button-font-card-dark: #1d1d1f;
+
+  --color-button-font: #0071e3;
+  --color-button-font-pay: #2997ff;
+
+  --gap-grid: 12px;
+}
+
+body{
+  height: 400vh;
+}
+
+.svg{
+  fill: var(--color-font-navbar);
+}
